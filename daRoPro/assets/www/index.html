@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,target-densitydpi=250,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+    <!-- =====Meta ========-->
+
+    <!--
+      <script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script><script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
+    <title>MARGIN CALCULATOR</title>
+    
+	<!--=====STYLE/CSS======-->
+    <!-- ******Find out how to include jquery themes-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+    <!--<link rel="stylesheet" href="css/test2.css" />    -->
+    <link rel="stylesheet" href="css/style.css" />
+	
+	<!--JQuery/JS=====-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js"></script>
+	<!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+	<script src="cordova-2.2.0.js"></script>
+   	<script type="text/javascript" charset="utf-8">
+      
+        /*var onDeviceReady = function() {
+            document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+        };
+
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, true);
+        } */
+
+     // Function called when page has loaded
+        function init() {
+          document.addEventListener("deviceready",onDeviceReady,false);
+        }
+
+        // Function called when phonegap is ready
+        function onDeviceReady() {
+            //All pages at least 100% of viewport height
+            var viewPortHeight = $(window).height();
+            var headerHeight = $('div[data-role="header"]').height();
+            var footerHeight = $('div[data-role="footer"]').height();
+            var contentHeight = viewPortHeight - headerHeight - footerHeight;
+
+            // Set all pages with class="page-content" to be at least contentHeight
+            $('div[class="page-content"]').css({'min-height': contentHeight + 'px'});
+         }
+	</script>  
+  
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	</head>
+  <body>
+  <!--===================================START OF PAGE ONE-->
+  <div data-theme="b" data-role="page" id="PageOne">
+   <div data-role="header">Damian Calculator</div>
+	<div id="toprows" data-role="content" data-theme="a">
+      <!-- .................................START OF INPUT/OUTPUTS-->
+      <div class="left" data-role="content" data-theme="a">
+        <form data-ajax="false" >
+          <p>
+          <label>Pay Rate:</label> 
+          <input readonly data-ajax="false" class="BoxA" id="payRate" type="tel" name="payRate" data-x="1" autocomplete="off"/></p>
+          <p>
+          <label>Mark Up:</label> 
+          <input readonly class="BoxA" id="markUp" type="tel" name="markUp" data-x="2" autocomplete="off"/></p>
+          <p>
+          <label>Bill Rate:</label> 
+          <!-- <marquee direction="left" scrollamount="3" behavior="scroll" style="width: 120px; height: 15px; color: red; font-size: 13px;">Rate Below Floor</marquee> -->
+          <input readonly	 class="BoxA" id="billRate" type="tel" name="billRate" data-x="3" autocomplete="off"/></p>
+          <p>
+          <!-- <marquee  direction="left" scrollamount="3" behavior="scroll" style="width: 120px; height: 15px; color: red; font-size: 13px;">Rate Below Floor</marquee> -->
+          <label>Gross Profit Margin:</label> 
+          <input readonly class="BoxA" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" autocomplete="off"/></p>
+          <p>
+          <label>Gross Margin %:</label> 
+          <input readonly class="BoxA" id="grossMarginPercent" type="tel" name="grossMarginPercent" data-x="3" autocomplete="off"/></p>
+        </form>
+      </div>
+      <!-- ...............................END OF INPUT/OUTPUTS-->
+	  <!--<img id="mainLogo" src="images/logo2.png"/>-->
+      <!-- .............................START OF CALCULATOR BUTTONS-->
+      <div id="bottombuttons" class="right" data-role="content" data-theme="a">
+        <div class="ui-grid-b">
+          <div class="ui-block-a">
+            <div data-role="button" data-theme="b" id="key7" data-Digit="7">7</div>
+          </div>
+          <div class="ui-block-b">
+            <div data-role="button" data-theme="b" id="key8" data-Digit="8">8</div>
+          </div>
+          <div class="ui-block-c">
+            <div data-role="button" data-theme="b" id="key9" data-Digit="9">9</div>
+          </div>
+        
+          <div class="ui-block-a">
+            <div data-role="button" data-theme="b" id="key4" data-Digit="4">4</div>
+          </div>
+          <div class="ui-block-b">
+            <div data-role="button" data-theme="b" id="key5" data-Digit="5">5</div>
+          </div>
+          <div class="ui-block-c">
+            <div data-role="button" data-theme="b" id="key6" data-Digit="6">6</div>
+          </div>
+         
+          <div class="ui-block-a">
+            <div data-role="button" data-theme="b" id="key1" data-Digit="1">1</div>
+          </div>
+          <div class="ui-block-b">
+            <div data-role="button" data-theme="b" id="key2" data-Digit="2">2</div>
+          </div>
+          <div class="ui-block-c">
+            <div data-role="button" data-theme="b" id="key3" data-Digit="3">3</div>
+          </div>
+        </div>
+        <div class="ui-grid-a">
+             <div class="ui-block-a" style="width: 66.6%;">
+               <div data-role="button" data-theme="b" id="key0" data-Digit="0">0</div>
+             </div>
+             <div class="ui-block-b" style="width: 33.3%;">
+               <div data-role="button" data-theme="b" id="keyDecimalPoint" data-Digit=".">.</div>
+             </div>
+        </div>
+        <div class="ui-grid-b">
+          <div id="clearAll" class="ui-block-a" style="width:50%;">
+            <label for="ClearAll">ClearAll</label>
+			<a id="ClearAll" data-role="button" data-theme="a" data-State="Clear">Clear All</a><!--ClearALL /UNDO-->
+          </div>
+          <div class="ui-block-b" style="width:50%;">
+            <div data-role="button" data-theme="e"  id="BKSP">BKSP</div>
+          </div>
+<!--           <div class="ui-block-c" style="width:25%;"> -->
+<!--             <div data-role="button" data-theme="e" id="output2Form">Test</div> -->
+<!--           </div> -->
+        </div>
+        <!-- /grid-b -->
+      </div>
+      <!-- .............................END OF CALCULATOR BUTTONS-->
+		<div data-role="footer">
+		  <h4>
+			<a id="SettingsButton" data-role="button" href="#PageTwo" data-theme="a">Settings</a>
+		  </h4>
+		</div><!--footer-->
+   </div>
+    <!--=====================END OF CONTENT-->
+  </div>
+  <!--=============================================== END OF PAGE ONE -->
+  <!--==============================================START OF PAGE TWO -->
+  <div data-role="page" id="PageTwo" data-theme="b">
+    <div data-role="header">Settings</div>
+    <!-- /header -->
+    <div data-role="content" data-theme="c">
+      <form name="set">
+        <div class="ui-grid-a" data-role="content" data-theme="c">
+			
+			<div  class="ui-block-a">
+				<p>
+				<label>Workers Comp %:</label> 
+				<input class="Box BSET percent" id="workersComp" type="tel" name="workersComp" autocomplete="off" data-s="1"/></p>
+			</div>
+			<div  class="ui-block-b">
+				<p>
+				<label>Workers Comp $:</label> 
+				<input class="Box BSET money" readonly='true' id="workersCompMoney" type="tel" name="workersCompMoney" autocomplete="off" data-s="0"/></p>
+			</div>
+						 
+			<div  class="ui-block-a" >
+				<p>
+				<label>FICA &amp; FutaTax %</label> 
+				<input class="Box BSET percent" id="ficaAndFutaTax" type="tel" name="ficaAndFutaTax" autocomplete="off" data-s="1"/></p>
+			</div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>FICA &amp; FutaTax $</label> 
+				<input class="Box BSET money" id="ficaAndFutaTaxMoney" type="tel" name="ficaAndFutaTaxMoney" autocomplete="off" data-s="0"/></p>
+			</div>
+			 
+			<div  class="ui-block-a" >
+				<p>
+				<label>SUI %</label> 
+				<input class="Box BSET percent" id="sui" type="tel" name="sui" autocomplete="off" data-s="1"/></p>
+			</div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>SUI $</label> 
+				<input class="Box BSET money" id="suiMoney" type="tel" name="suiMoney" autocomplete="off" data-s="0"/></p>
+			</div>
+			
+			<div  class="ui-block-a" >
+				<p>
+				<label>Other %</label> 
+				<input class="Box BSET percent" id="other" type="tel" name="other" autocomplete="off" data-s="1"/></p>
+			</div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>Other $</label> 
+				<input class="Box BSET money" id="otherMoney" type="tel" name="otherMoney" autocomplete="off" data-s="0"/></p>
+			</div>
+			
+			<div  class="ui-block-a" >
+				<p>
+				<label>Funding &amp; Processing %</label> 
+				<input class="Box BSET Bbill percent" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" data-y="1"/></p>
+			</div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>Funding &amp; Processing $</label> 
+				<input class="Box BSET Bbill money" id="fundingAndProcessingMoney" type="tel" name="fundingAndProcessingMoney" data-y="0"/></p>
+			</div>
+			
+			<div  class="ui-block-a" >
+				<p>
+				<label>Misc %</label> 
+				<input class="Box BSET Bbill percent" id="misc" type="tel" name="misc" data-s="1"/></p>
+			</div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>Misc %</label> 
+				<input class="Box BSET Bbill money" id="miscMoney" type="tel" name="miscMoney" data-s="0" /></p>
+			</div>
+			
+			<div id="clearallwrapper2" class="ui-block-a" style="width:50%;">
+            <label for="ClearAll2">ClearAll</label>
+			<a id="ClearAll2" data-role="button" data-theme="a" data-State="Clear">Clear All</a><!--ClearALL /UNDO-->
+         </div>
+			<div  class="ui-block-b" >
+				<p>
+				<label>Total Expenses</label> 
+				<input class="Box BSET money" id="totalExpensesMoney" type="tel" name="totalExpensesMoney" /></p>
+			</div>
+			
+			<div  class="ui-block-a" >
+				<p>
+				<label>Floor %</label> 
+				<input class="Box BSET" id="floor" type="tel" name="floor"  /></p>
+			</div>	
+			<div  class="ui-block-b" ></div>
+			<!--<div  class="ui-block-b" >
+				<p>
+				<label>Floor %</label> 
+				<input class="Box BSET money" id="floorMoney" type="tel" name="floor" /></p>
+			</div>-->
+
+			</div><!--End of Payroll Burden -->	
+			<h4>
+				<a id="HomeButton" href="#PageOne" data-role="button" data-theme="b">Home</a>
+			</h4>
+		
+      <!-- .............................START OF CALCULATOR BUTTONS B -->
+    
+	    
+			
+		 
+	  </form>
+     
+    </div>
+  </div>
+  <!--=============================================== END OF PAGE TWO -->
+  <!--=================== JQUERY FILES-->
+  <script src="js/jquery.js"></script> 
+  <!--<script src="js/allowOneDecimal.js"></script>--> 
+  <!--<script src="js/jquery.price_format.1.7.min.js"></script> -->
+  <!--<script src="js/autoNumeric.js"></script> -->
+  <script src="js/ButtonsToWork.js"></script> 
+  
+  <!--<script src="js/toggleOutputs.js"></script> -->
+  <!--<script src="js/numFormat.js"></script> -->
+  <!-- <script src="js/myCalc.js"></script> -->
+  
+  <!--<script src="js/jquery.caret.1.02.min.js"></script> -->
+  <!--============ END OF JQUERY FILES-->
+  </body>
+
+	</html>

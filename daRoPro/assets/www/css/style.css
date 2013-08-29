@@ -1,0 +1,261 @@
+
+
+p .BoxA
+{
+	/* height:20%; */
+   height:60px;
+	font-size:29px;
+	color: #ffffff;
+	background-position:11px 5px, 14px 22px, 113px 5px; 
+	background-repeat:no-repeat; 
+	text-align:right;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:7px;
+	padding-bottom:7px;
+	background-color:aqua;
+	border-radius:0px;
+ 	
+}
+
+p .BSET{
+	/* height:25%; */
+   height:70px;
+   font-size:24px;
+	color: black;
+	background-position:11px 5px, 14px 22px; 
+	background-repeat:no-repeat; 
+	text-align:right;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:7px;
+	padding-bottom:7px;
+	background-color:#C5D4D7;
+	border-radius:0px;
+ 	-webkit-touch-callout: none;
+	/*-webkit-user-select: none;*/
+}
+
+#mainLogo{
+position:absolute;
+
+}
+/*
+
+.ui-focus,
+.ui-btn:focus {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none ;
+}
+*/
+
+
+
+.left
+{
+/*  background-image: url(../images/damianlogo3.png); */
+/*  background-repeat: no-repeat; */
+/*  background-position: 17px 316px; */
+}
+/*  14px 22px */
+/* partial code for horizontal rotation not working yet */
+/* .left{
+float:left;
+}
+.right{
+float:right;
+}
+ */
+	
+form .curFocus
+{
+background-color:white;
+color:black;
+font-size:29px;
+}
+
+form .BSET.curFocus
+{
+background-color:white;
+color:black;
+font-size:24px;
+}
+
+[name="set"] h2{ margin:1px;}
+
+form .red
+{
+background-color:pink;
+
+}
+
+p {
+	
+    margin: -5px auto;
+}
+
+label
+{
+	display:none;
+}
+
+
+#AA
+{
+	background-image:url(../images/billRate.png); 
+}
+
+#BB
+{
+  background-image:url(../images/payRate.png); 
+}
+
+#CC
+{
+  background-image:url(../images/markUpPercent.png); 
+  
+}
+
+/* #billRate
+{
+  background-image:url(../images/billRate.png); 
+
+}
+
+#billRate2
+{
+  background-image:url(../images/billRate.png), url(../images/equals.png); 
+
+}
+
+
+#payRate
+{
+  background-image:url(../images/payRate.png), url(../images/equals.png);
+} 
+
+#markUp
+{
+  background-image:url(../images/markUpPercent.png), url(../images/equals.png);
+}
+
+#grossProfitMargin
+{
+  background-image:url(../images/grossProfitMargin.png), url(../images/equals.png);
+
+}
+
+#grossMarginPercent
+{
+  background-image:url(../images/grossMarginPercent.png), url(../images/equals.png);
+}
+ */
+
+
+#workersComp
+{
+  background-image:url(../images/workersComp.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+#workersCompMoney
+{
+  background-image:url(../images/workersComp.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+
+#ficaAndFutaTax
+{
+  background-image:url(../images/ficaAndFutaTax.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px; ; 
+}
+
+#ficaAndFutaTaxMoney
+{
+  background-image:url(../images/ficaAndFutaTax.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; ; 
+}
+
+#sui
+{
+  background-image:url(../images/sui.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px;  
+}
+#suiMoney
+{
+  background-image:url(../images/sui.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px;  
+}
+
+#other
+{
+  background-image:url(../images/other.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px;  
+}
+#otherMoney
+{
+  background-image:url(../images/other.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px;  
+}
+
+#fundingAndProcessing
+{
+  background-image:url(../images/fundingAndProcessing.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+
+#fundingAndProcessingMoney
+{
+  background-image:url(../images/fundingAndProcessing.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+
+#misc
+{
+  background-image:url(../images/misc.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+#miscMoney
+{
+  background-image:url(../images/misc.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+
+#floor
+{
+  background-image:url(../images/floor.png),url(../images/percentPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+
+#floorMoney
+{
+  background-image:url(../images/floor.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; 
+}
+#totalExpensesMoney
+{
+  background-image:url(../images/totalExpenses.png),url(../images/dollarPic.png); 
+  background-position:11px 5px, 14px 22px; 
+	background-color: orange;
+}
+
+.ui-btn-corner-all 
+{
+    border-radius: .4em;
+}
+.ui-btn-inner {
+	padding: 1.5em 20px;
+}
+
+
+.ui-disabled 
+{
+	/*color: red;*/
+    opacity: 0.68;
+}
+
+input[disabled] select[disabled]
+{
+color:red;
+}
+
