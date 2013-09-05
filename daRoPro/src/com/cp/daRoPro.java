@@ -32,7 +32,7 @@ public class daRoPro extends DroidGap
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
         super.setIntegerProperty("splashscreen", R.drawable.splash);
-        super.loadUrl(Config.getStartUrl(), 2000);
+        super.loadUrl(Config.getStartUrl(), 2500);
 
     }
 }

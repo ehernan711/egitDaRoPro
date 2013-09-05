@@ -1,13 +1,13 @@
 
-$(document).ready(function() {
-   $('#PageOne').css({height:screen.height}); 
-   $('#PageTwo').css({height:screen.height}); 
+	$(document).ready(function() {
+    $('#PageOne').css({height:screen.height}); 
+    $('#PageTwo').css({height:screen.height}); 
 
 	//$(':input').autoNumeric('init', {aSign: "€ "});
 	//$(":input").attr('maxlength','15');
 
 	$(".money").attr('tabindex','-1');
-	$(".money").bind('click change keydown keyup keypress keydown swipeleft input', function(){ return false;});
+ 	$(".money").bind('click change keydown keyup keypress keydown swipeleft input', function(){ return false;});
 	$(".money").prop('disabled', true);
 	$("#grossProfitMargin").prop('disabled', true);
 	$("#grossMarginPercent").prop('disabled', true);
@@ -24,8 +24,8 @@ $(document).ready(function() {
 	//.append('<marquee direction="left" behavior="scroll" style="color: red; font-size: 22px; width: 183px; height: 46px; position:absolute ; top: 11; left: 11 ;">Rate Below Floor....</marquee>');	
   
 	/**************INITAL STYLING******************************/
-	$('marquee').hide();
-   var warningPic='url(\"./images/warningMessage.png\")';
+	//$('marquee').hide();
+	var warningPic='url(\"./images/warningMessage.png\")';
 	
 	var nothingPic='url(\"./images/nothing.png\")';
 	var equalsPic= 'url(\"./images/equals.png\")';
@@ -36,23 +36,23 @@ $(document).ready(function() {
 	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
 	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';	
 	
-	billRateFull           = 0;
-	payRateFull            = 0;
-	markUpFull             = 0;
-  	grossProfitMarginFull  = 0;
-	grossMarginPercentFull = 0;
-   totalExpensesMoneyFull = 0;
-   
-	workersCompMoneyFull			   = 0;
-   ficaAndFutaTaxMoneyFull      	= 0;
+	billRateFull            = 0;
+	payRateFull             = 0;
+	markUpFull              = 0;
+  	grossProfitMarginFull   = 0;
+	grossMarginPercentFull  = 0;
+	totalExpensesMoneyFull  = 0;
+
+	workersCompMoneyFull			= 0;
+    ficaAndFutaTaxMoneyFull      	= 0;
 	suiMoneyFull                 	= 0;
 	otherMoneyFull               	= 0;
 	fundingAndProcessingMoneyFull	= 0;
 	miscMoneyFull                	= 0;
 
-   floor                         = 0;
+	floor                           = 0;
    	
-   $("[name='billRate']").css('background-image', billRatePic +','+ nothingPic );
+    $("[name='billRate']").css('background-image', billRatePic +','+ nothingPic );
 	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic);
 	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic);
 	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic);
@@ -82,31 +82,27 @@ $(document).ready(function() {
    
 	function floorCompare()
 	{
-		floor            = Number($("#floor").val().replace(/[^0-9\.]+/g,"")) || 0;
-		
-     if (floor > 0) //check wheter comparison is even wanted
-     {
-    	 //var p = $("#grossMarginPercent");
-    	 //var position = p.position();
-         if (floor > grossMarginPercentFull) 
-            {
-        	  
-               //alert("test");
-               //flash warning
-        	   $('marquee').remove();
-               $('marquee').show();
-                  //$('#toprows>div>form>p:nth-child(2)')
-               	  $('#toprows')
-               	  .prepend('<marquee direction="left" behavior="scroll" style="color: red; font-size: 22px; width: 183px; height: 46px; position:absolute ; top: '+ position.top +'px; left: '+ position.left +'px ;">Rate Below Floor....</marquee>');
-               //$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic +','+ warningPic);
-            }
-         else
-            {
-               //remove warning
-               $('marquee').remove(); 
-               //$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic +','+ nothingPic);
-            }	
-     } 
+		 floor            = Number($("#floor").val().replace(/[^0-9\.]+/g,"")) || 0;
+			
+	     if (floor > 0) //check whether comparison is even wanted
+	     {
+	    	 //var p = $("#grossMarginPercent");
+	    	 //var position = p.position();
+	         if (floor > grossMarginPercentFull) 
+	            {
+	        	  //flash warning
+	        	  $('marquee').remove();
+	              $('marquee').show();
+	              
+	              $('#toprows')
+	              .prepend('<marquee direction="left" behavior="scroll" style="color: red; font-size: 22px; width: 183px; height: 46px; position:absolute ; top: '+ position.top +'px; left: '+ position.left +'px ;">Rate Below Floor....</marquee>');
+	            }
+	         else
+	            {
+	               //remove warning
+	               $('marquee').remove(); 
+	             }	
+	     } 
 	}
 
 	function addDigit(myThis)
@@ -160,9 +156,9 @@ $(document).ready(function() {
    
    function calculateSettings()
    {      		
-      workersCompFull			   = Number($("[name='workersComp']").val().replace(/[^0-9\.]+/g,"")) || 0;
+      workersCompFull			= Number($("[name='workersComp']").val().replace(/[^0-9\.]+/g,"")) || 0;
       ficaAndFutaTaxFull      	= Number($("[name='ficaAndFutaTax']").val().replace(/[^0-9\.]+/g,"")) || 0;
-      suiFull                    = Number($("[name='sui']").val().replace(/[^0-9\.]+/g,"")) || 0;
+      suiFull                   = Number($("[name='sui']").val().replace(/[^0-9\.]+/g,"")) || 0;
       otherFull               	= Number($("[name='other']").val().replace(/[^0-9\.]+/g,"")) || 0;
       fundingAndProcessingFull	= Number($("[name='fundingAndProcessing']").val().replace(/[^0-9\.]+/g,""))|| 0;
       miscFull                	= Number($("[name='misc']").val().replace(/[^0-9\.]+/g,""))|| 0;
