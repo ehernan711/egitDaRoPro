@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Damian Calculator</string>
+    <string name="eula">The Damian Profit Builder Calculator application is a tool for estimating gross labor profit only and is not intended to be a comprehensive calculation of net profit.  I understand that by using this application, I agree with the above and hold Damian Services harmless for any action I take in my usage or reliance upon of the information generated based on this calculation.</string>
+    <string name="updates"></string>
 </resources>

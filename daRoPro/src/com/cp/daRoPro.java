@@ -27,6 +27,8 @@ public class daRoPro extends DroidGap
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+    	
+    	new SimpleEula(this).show();
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
