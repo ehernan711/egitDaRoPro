@@ -64,6 +64,12 @@ public class SimpleEula {
 							mActivity.finish(); 
 						}
                     	
+                    })
+                    .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                        public void onCancel(DialogInterface dialog) {
+                            // Close the activity as they have declined the EULA
+                            mActivity.finish();
+                        }
                     });
             builder.create().show();
         }
