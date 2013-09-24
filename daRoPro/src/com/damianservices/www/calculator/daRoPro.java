@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.cp;
+package com.damianservices.www.calculator;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
